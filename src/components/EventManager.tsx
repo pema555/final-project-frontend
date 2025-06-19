@@ -75,17 +75,16 @@ const EventManager = () => {
     }
   }
 
-  // Handle search filters
-  const debouncedSearch = useMemo(() => {
-    return debounce((params: Partial<GetEventsParams>) => {
-      setSearchParams((prev) => ({
-        ...prev,
-        ...params,
-        page: '1',
-      }))
-    }, 500) // 500ms delay
-  }, [])
-
+ const debouncedSearch = useMemo(() => {
+  return debounce((...args: unknown[]) => {
+    const params = args[0] as Partial<GetEventsParams>
+    setSearchParams((prev) => ({
+      ...prev,
+      ...params,
+      page: '1',
+    }))
+  }, 500)
+}, [])
   const handleSearch = useCallback(
     (params: Partial<GetEventsParams>) => {
       debouncedSearch(params)
