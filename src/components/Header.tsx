@@ -13,7 +13,7 @@ const Header = () => {
     <header className='flex flex-col w-full mt-10 p-6'>
       {/* Top Row with Logout Button aligned right */}
       <div className='flex justify-end'>
-        <Button onClick={logout} variant='destructive'>
+        <Button onClick={logout} variant='destructive' className='bg-red-500'>
           Logout
         </Button>
       </div>

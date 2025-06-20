@@ -65,7 +65,7 @@ import {
             <PaginationItem>
               <PaginationPrevious
                             onClick={() => onPageChange(currentPage - 1)}
-                            className={`cursor-pointer ${currentPage === 1 ? 'pointer-events-none opacity-50' : ''}`} size={undefined}              />
+                            className={`cursor-pointer ${currentPage === 1 ? 'pointer-events-none opacity-50 mx-8' : ''}`} size={undefined}              />
             </PaginationItem>
   
             <PaginationItems
